@@ -9,6 +9,8 @@ plim.mp3
 *.aac
 *.flac
 *.m4a
+*.txt
 
 # Bloquear arquivos de texto de configuração pessoal
- premios.txt
+*premios.txt
+

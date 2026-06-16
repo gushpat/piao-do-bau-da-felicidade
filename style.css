@@ -1,0 +1,150 @@
+/* Configuração Geral da Página e Fundo de Raios */
+body {
+    background: repeating-conic-gradient(from 0deg, #e3e3e3 0deg 6deg, #fcfcfc 6deg 12deg);
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial Black', Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* CONTAINER PRINCIPAL DO PIÃO */
+.piao-estrutura {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Moldura Vermelha com Brilho e Profundidade */
+.moldura-vermelha {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #ff2b2b, #990000 75%, #550000 100%);
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.4),
+        inset 4px 4px 10px rgba(255, 255, 255, 0.5),
+        inset -6px -6px 15px rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+/* Cavidade Escura com Perspectiva 3D */
+.cavidade-interna {
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    background: #000;
+    border-radius: 50%;
+    z-index: 3;
+    box-shadow: inset 0 10px 25px rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 800px; /* Ativa o efeito tridimensional profundo */
+}
+
+/* O CILINDRO HORIZONTAL */
+.cilindro-3d {
+    position: relative;
+    width: 120px;
+    height: 160px;
+    transform-style: preserve-3d;
+    transform: rotateX(4deg) rotateY(0deg); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo das Faces dos Números (1 a 6) */
+.face-numero {
+    position: absolute;
+    width: 120px;
+    height: 160px;
+    background: #111;
+    border: 2px solid #222;
+    color: #fff;
+    font-size: 130px;
+    font-weight: 900;
+    text-align: center;
+    line-height: 160px;
+    backface-visibility: hidden; /* Esconde os números que giram por trás */
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+/* PAINEL DE TEXTO DOS PRÊMIOS */
+.caixa-premio {
+    margin-top: 40px;
+    width: 460px;
+    background: linear-gradient(135deg, #1f1f1f, #070707);
+    border: 4px solid #ffbb00;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+.label-titulo {
+    font-size: 12px;
+    color: #ffbb00;
+    letter-spacing: 3px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.texto-sorteado {
+    font-size: 26px;
+    color: #ffffff;
+    min-height: 35px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+/* Efeito de Vibração Textual no Giro */
+.texto-girando {
+    animation: embaralhaTexto 0.08s infinite alternate;
+    opacity: 0.4;
+    filter: blur(1px);
+}
+
+@keyframes embaralhaTexto {
+    0% { transform: translateY(-3px); }
+    100% { transform: translateY(3px); }
+}
+
+/* BOTÃO DE COMANDO RETRÔ */
+.botao-comando {
+    margin-top: 35px;
+    padding: 16px 65px;
+    font-size: 22px;
+    color: #fff;
+    background: linear-gradient(to bottom, #ff3333, #aa0000);
+    border: 2px solid #ff8888;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 22px rgba(170, 0, 0, 0.4);
+    font-weight: bold;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.botao-comando:hover {
+    background: linear-gradient(to bottom, #ff4d4d, #c40000);
+}
+
+.botao-comando:active { 
+    transform: scale(0.96); 
+}
+
+.botao-comando:disabled {
+    background: #666;
+    border-color: #888;
+    cursor: not-allowed;
+    box-shadow: none;
+}

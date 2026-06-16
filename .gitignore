@@ -1,0 +1,14 @@
+# Bloquear as músicas e efeitos sonoros específicos do projeto
+holiday-for-strings.mp3
+plim.mp3
+
+# Bloquear qualquer outro arquivo de áudio que você possa adicionar depois
+*.mp3
+*.wav
+*.ogg
+*.aac
+*.flac
+*.m4a
+
+# Bloquear arquivos de texto de configuração pessoal
+ premios.txt

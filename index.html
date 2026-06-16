@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pião do Baú da Felicidade</title>
+    <!-- Vinculação do arquivo de estilos externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Estrutura do Pião Baseado no GIF (Cilindro Horizontal de 1 a 6) -->
+    <div class="piao-estrutura">
+        <div class="moldura-vermelha"></div>
+        <div class="cavidade-interna">
+            <div class="cilindro-3d" id="cilindro">
+                <!-- As 6 faces tridimensionais serão geradas pelo JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Painel de Exibição do Prêmio do Baú -->
+    <div class="caixa-premio">
+        <div class="label-titulo">Prêmio Sorteado</div>
+        <div class="texto-sorteado" id="displayPremio">APERTE PARA JOGAR</div>
+    </div>
+
+    <!-- Botão de Comando para Iniciar o Giro -->
+    <button class="botao-comando" id="btnPlay">RODAR PIÃO!</button>
+
+    <!-- Arquivos de Áudio (Coloque seus arquivos MP3 na mesma pasta) -->
+    <audio id="audioMusica" src="holiday-for-strings.mp3" preload="auto"></audio>
+    <audio id="audioPlim" src="plim.mp3" preload="auto"></audio>
+
+    <!-- Vinculação do arquivo de script externo -->
+    <script src="script.js"></script>
+</body>
+</html>
